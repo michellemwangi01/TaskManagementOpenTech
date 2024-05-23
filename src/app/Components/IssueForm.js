@@ -1,11 +1,16 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DataContext } from "../layout";
 
 const IssueForm = () => {
+  const { taskListItems, setTaskListItems } = useContext(DataContext);
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -38,7 +43,9 @@ const IssueForm = () => {
 
   const handleIssueSubmission = (data) => {
     console.log(data);
+    setTaskListItems([...taskListItems, data]);
     sendEmail(data);
+    router.push("/tasks");
     reset();
   };
 
@@ -286,29 +293,3 @@ const IssueForm = () => {
 };
 
 export default IssueForm;
-
-// Great, now use this template to create a form with these fields.
-// Contact Information:
-// separate below into a fieldset called Client details
-// Client Name - add this input field
-// Client Email - add this input field
-// Client Phone Number - add this input field
-// Company Name (if applicable) - add this input field
-// Client Location - add this input field
-
-// separate below into a fieldset called Issue details
-// Issue Details:
-// Description: Detailed explanation of the issue or inquiry. - add this input field
-// Severity: Level of impact on the client's operations (e.g., Critical, Major, Minor). (make this a dropdown) - add this input field
-// Platform/Service/Product: Specify if the issue pertains to a specific software, service, or product provided by the company. (make this a dropdown) add this input field
-// Attachments: Allow clients to upload files, screenshots, or other relevant materials. add this input field
-// Category (make this a dropdown with the below options)
-// Technical Issue:
-// Feature Request:
-// General Inquiry:
-// Account/Billing Inquiry:
-// Service Outage/Disruption:
-// Feedback/Suggestions:
-// Follow-up:
-// Preferred Method of Contact: How the client prefers to be contacted regarding the issue (email, phone, etc.).
-// Add a memo field labelled Message for addition information.

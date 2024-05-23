@@ -1,57 +1,10 @@
-import React from "react";
-import { MdDelete } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
-const data = [
-  {
-    client_name: "Michelle Mwangi",
-    client_email: "michellemwangim@gmail.com",
-    client_phone: "0700562291",
-    company_name: "Sensei",
-    client_location: "MasaiMara",
-    preferred_contact_method: "Email",
-    category: "Technical Issue",
-    platform_service_product: "Service",
-    severity: "Critical",
-    issue_description: "this is the details of the issue / task",
-  },
-  {
-    client_name: "Michelle Mwangi",
-    client_email: "michellemwangim@gmail.com",
-    client_phone: "0700562291",
-    company_name: "Sensei",
-    client_location: "MasaiMara",
-    preferred_contact_method: "Email",
-    category: "Technical Issue",
-    platform_service_product: "Service",
-    severity: "Critical",
-    issue_description: "this is the details of the issue / task",
-  },
-  {
-    client_name: "Michelle Mwangi",
-    client_email: "michellemwangim@gmail.com",
-    client_phone: "0700562291",
-    company_name: "Sensei",
-    client_location: "MasaiMara",
-    preferred_contact_method: "Email",
-    category: "Technical Issue",
-    platform_service_product: "Service",
-    severity: "Critical",
-    issue_description: "this is the details of the issue / task",
-  },
-  {
-    client_name: "Michelle Mwangi",
-    client_email: "michellemwangim@gmail.com",
-    client_phone: "0700562291",
-    company_name: "Sensei",
-    client_location: "MasaiMara",
-    preferred_contact_method: "Email",
-    category: "Technical Issue",
-    platform_service_product: "Service",
-    severity: "Critical",
-    issue_description: "this is the details of the issue / task",
-  },
-];
-const TasksList = ({}) => {
+"use client";
+import React, { useContext } from "react";
+import { MdDelete, MdEdit } from "react-icons/md";
+import { DataContext } from "../layout";
+const TasksList = () => {
+  const { taskListItems } = useContext(DataContext);
+
   return (
     <div className="overflow-x-auto rounded-lg">
       <table className="min-w-full divide-y divide-gray-200 text-center rounded-sm">
@@ -96,7 +49,7 @@ const TasksList = ({}) => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200 text-center ">
-          {data.map((item, index) => (
+          {taskListItems.map((item, index) => (
             <tr key={index}>
               <td className="px-6 py-4 whitespace-nowrap text-center">{`00${
                 index + 1
