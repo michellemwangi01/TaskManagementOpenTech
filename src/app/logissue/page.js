@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div>
       <div className="landing-page-form flex flex-col justify-center align-middle my-auto">
-        <h2 className="h1 font-bold text-xl leading-tight">
+        <h2 className="h1 text-white font-bold text-xl leading-tight">
           Submit an Inquiry or Issue
         </h2>
       </div>
