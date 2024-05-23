@@ -1,11 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --primary-font: "Georgia", "Times New Roman", Times, serif;
+  --secondary: #567c23;
+  --primary: #01afe8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,16 +22,61 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #ffffff;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .par {
+    font-family: var(--primary-font);
+    font-size: 1rem;
+  }
+  .h1 {
+    font-size: 4rem;
+    color: white;
+    font-family: var(--primary-font);
+    text-align: center;
+  }
+  .h2 {
+    font-size: 1.5rem;
+    color: white;
+    font-family: var(--primary-font);
+    text-align: center;
+    padding: 1rem;
+  }
+  span {
+    color: var(--secondary);
+  }
+  .button {
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-family: var(--primary-font);
+    margin: 1rem;
+    border-radius: 0;
+  }
+  .button:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+  .landing-page {
+    min-height: 95vh; /* Set minimum height to full viewport height */
+    background-color: black; /* Fallback background color */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover; /* Cover the entire element with the background image */
+    background-position: center; /* Center the background image */
+  }
+  .landing-page-form {
+    min-height: 40vh; /* Set minimum height to full viewport height */
+    background-color: black; /* Fallback background color */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://images.unsplash.com/photo-1633158829875-e5316a358c6f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover; /* Cover the entire element with the background image */
+    background-position: center; /* Center the background image */
   }
 }
