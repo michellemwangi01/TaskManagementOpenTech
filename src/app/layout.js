@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   const [taskListItems, setTaskListItems] = useState([]);
   const [clientItems, setclientItems] = useState([]);
-  // const [refreshData, setDataRefresh] = useState(taskListItems.length);
+  const [clientID, setClientID] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
   }, [taskListItems]);
 
   // console.log(taskListItems);
-  console.log(clientItems);
+  // console.log(clientItems);
 
   // if (loading) {
   //   return (
@@ -69,8 +69,8 @@ export default function RootLayout({ children }) {
     taskListItems,
     setTaskListItems,
     clientItems,
-    // refreshData,
-    // setDataRefresh,
+    clientID,
+    setClientID,
   };
 
   return (
