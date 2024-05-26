@@ -1,4 +1,4 @@
-# Frontend Application
+# Opentech Task Management Frontend Application
 
 ## Overview
 
@@ -6,7 +6,7 @@ This project is the frontend component of our web application, developed using [
 
 ## Table of Contents
 
-- [Frontend Application](#frontend-application)
+- [Opentech Task Management Frontend Application](#opentech-task-management-frontend-application)
   - [Overview](#overview)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
