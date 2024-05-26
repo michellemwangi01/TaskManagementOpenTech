@@ -16,7 +16,7 @@ export default function Home() {
         you as soon as possible. <br /> We're here to assist you.
       </p>
       <Link href="/logissue" className="button">
-        Log an Issue
+        Create a Task
       </Link>
     </main>
   );

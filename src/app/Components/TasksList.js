@@ -32,14 +32,9 @@ const TasksList = () => {
               Request ID
             </th>
             <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
-              Status
-            </th>
-            <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
               Category
             </th>
-            <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
-              Assigned to
-            </th>
+
             <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
               Severity
             </th>
@@ -48,6 +43,13 @@ const TasksList = () => {
             </th>
             <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
               Issue Description
+            </th>
+            <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
+              Status
+            </th>
+
+            <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
+              Assigned to
             </th>
             <th className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
               Client Name
@@ -83,22 +85,20 @@ const TasksList = () => {
                 : null;
 
               const rowStyle =
-                item.status === "inprogress"
+                item.status === "In progress"
                   ? { backgroundColor: "lightyellow" }
-                  : item.status === "complete"
+                  : item.status === "Complete"
                   ? { backgroundColor: "lightgreen" }
                   : {};
 
               return (
                 <tr key={index} style={rowStyle}>
                   <td className="px-6 py-4 whitespace-nowrap">{`#${item.id}`}</td>
-                  <td className="px-6 py-4 whitespace-nowrap">{item.status}</td>
+
                   <td className="px-6 py-4 whitespace-nowrap">
                     {item.category}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    {item.assigned_to}
-                  </td>
+
                   <td className="px-6 py-4 whitespace-nowrap">
                     {item.severity}
                   </td>
@@ -107,6 +107,10 @@ const TasksList = () => {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {item.description}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">{item.status}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {item.assigned_to}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {clientDetails && clientDetails.name}

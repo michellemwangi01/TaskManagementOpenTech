@@ -62,7 +62,7 @@ function Navbar() {
                 className="block py-2 px-3 md:p-0  text-xl  rounded"
                 onClick={() => handleItemClick("logissue")}
               >
-                New Issue
+                Create Task
               </Link>
             </li>
             <li

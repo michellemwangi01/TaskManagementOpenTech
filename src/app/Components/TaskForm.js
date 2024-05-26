@@ -11,6 +11,29 @@ const TaskForm = () => {
   const { taskListItems, setTaskListItems, clientID } = useContext(DataContext);
   const router = useRouter();
 
+  const userRoles = [
+    "Administrator",
+    "Manager",
+    "Supervisor",
+    "Team Leader",
+    "Specialist",
+    "Analyst",
+    "Coordinator",
+    "Technician",
+    "Assistant",
+    "Operator",
+  ];
+
+  const issueCategories = [
+    "Technical Issue",
+    "Feature Request",
+    "General Inquiry",
+    "Account/Billing Inquiry",
+    "Service Outage/Disruption",
+    "Feedback/Suggestions",
+    "Follow-up",
+  ];
+
   const {
     register,
     handleSubmit,
@@ -59,6 +82,7 @@ const TaskForm = () => {
     handleAddTask(data);
     reset();
   };
+
   return (
     <form
       onSubmit={handleSubmit(handleIssueSubmission)}
@@ -80,17 +104,11 @@ const TaskForm = () => {
               <option value="" disabled selected>
                 Select
               </option>
-              <option value="Technical Issue">Technical Issue</option>
-              <option value="Feature Request">Feature Request</option>
-              <option value="General Inquiry">General Inquiry</option>
-              <option value="Account/Billing Inquiry">
-                Account/Billing Inquiry
-              </option>
-              <option value="Service Outage/Disruption">
-                Service Outage/Disruption
-              </option>
-              <option value="Feedback/Suggestions">Feedback/Suggestions</option>
-              <option value="Follow-up">Follow-up</option>
+              {issueCategories.map((role, index) => (
+                <option key={index} value={role}>
+                  {role}
+                </option>
+              ))}
             </select>
             <label className="peer-focus:font-medium absolute text-normal font-serif font-normal duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Category
@@ -170,8 +188,8 @@ const TaskForm = () => {
               className="text-black block py-2.5 px-0 w-full rounded-md text-md bg-transparent border-0 border-b-2 border-blue-900 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               style={{ borderBottom: "1px solid #0b2250" }}
             >
-              <option value="inprogress">In Progress</option>
-              <option value="complete">Complete</option>
+              <option value="In progress">In Progress</option>
+              <option value="Complete">Complete</option>
             </select>
             <label className="peer-focus:font-medium absolute text-normal font-serif font-normal duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Status
@@ -189,9 +207,11 @@ const TaskForm = () => {
               <option value="" disabled selected>
                 Select
               </option>
-              <option value="Michelle Mwangi">Michelle Mwangi</option>
-              <option value="Selina Musau">Selina Musau</option>
-              <option value="John Doe">John Doe</option>
+              {userRoles.map((role, index) => (
+                <option key={index} value={role}>
+                  {role}
+                </option>
+              ))}
             </select>
             <label className="peer-focus:font-medium absolute text-normal font-serif font-normal duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
               Assigned to
