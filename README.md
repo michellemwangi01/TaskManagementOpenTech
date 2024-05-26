@@ -18,6 +18,7 @@ This project is the frontend component of our web application, developed using [
     - [Option to Create a new Client or to Select an existing one](#option-to-create-a-new-client-or-to-select-an-existing-one)
     - [Notification System](#notification-system)
     - [Task List View](#task-list-view)
+  - [License](#license)
 
 ## Installation
 
@@ -79,3 +80,7 @@ The tasks list is color coded depending on the Status
 
 Tasks can also be deleted
 ![alt text](Images/image-6.png)
+
+## License
+
+This project is licensed to @Michelle Mwangi under the MIT License.
