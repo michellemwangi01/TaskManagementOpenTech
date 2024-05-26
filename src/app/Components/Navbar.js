@@ -10,7 +10,6 @@ function Navbar() {
 
   useEffect(() => {
     if (router) {
-      // Set the active item based on the current path
       const path = router.pathname;
       switch (path) {
         case "/":
@@ -29,7 +28,7 @@ function Navbar() {
   }, [router?.pathname]);
 
   const handleItemClick = (itemName) => {
-    setActiveItem(itemName); // Update active item state on click
+    setActiveItem(itemName); 
   };
   return (
     <nav className="  w-full z-10 top-0 bg-transparent font-serif">

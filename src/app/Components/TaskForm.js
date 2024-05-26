@@ -67,7 +67,6 @@ const TaskForm = () => {
           type: "success",
         });
         setTaskListItems([...taskListItems, data]);
-        // sendEmail(data);
         router.push("/tasks");
         reset();
       } else {
